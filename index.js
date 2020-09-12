@@ -91,3 +91,37 @@ async function main(){
             var resultContributor = resultContributor + (`
             \n <img src="${gitContribuProfileImage}" alt="drawing" width="150" display="inline"/> ${contributorsGitUserName}  GitHubLink: ${gitContribuUrl}`);
         }
+
+        var result = (`
+# ${projectTittle} 
+${projectDescription}
+\n* [Installation](#Installation)
+\n* [Instructions](#Instructions)
+\n* [License](#License)
+\n* [Contributors](#Contributors)
+\n* [Author](#Author)
+\n* [Tests](#Tests)
+## Installation
+${installationProcess}
+## Instructions
+${instruction}
+\`\`\`
+${instructionExample}
+\`\`\`
+## License 
+This project is licensed under the ${licenseName} - see the ${licenseUrl} file for details
+## Contributors
+${resultContributor}
+## Tests
+${tests}
+## Author 
+\n![ProfileImage](${gitProfileImage})
+\n**${gitName}**
+\nEmail: ${gitEmail}
+\nLocation:${gitlocation}
+\nGitHub: ${gitUrl}
+`)
+var writeResult = fs.writeFileSync(path.join(__dirname, '../ReadMeGenerator', 'readme.md'), result )
+console.log("file generated....")
+    }
+main();
