@@ -77,3 +77,6 @@ async function main(){
         const gitlocation = gitData.location;
         const gitUrl = gitData.html_url;
         const gitProfileImage = gitData.avatar_url;
+
+        const contributorUserNamesArray = contributorUserNames.split(",");
+        console.log(contributorUserNamesArray);
